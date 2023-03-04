@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="sample.css">
+    <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="social_foundicons.css">
+    <link rel="stylesheet" href="general_foundicons.css">
+    <link rel="stylesheet" href="bootstrap-responsive.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+
+<body id="pageBody">
+    <div id="divBoxed" class="container">
+        <div class="transparent-bg"
+            style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: -1;zoom: 1;">
+        </div>
+
+        <div class="divPanel notop nobottom">
+            <div class="row-fluid">
+                <div class="span12">
+
+                    <div id="divLogo" class="pull-left">
+                        <a href="index.html" id="divSiteTitle">
+                            <img src="images/logo.jpg" />
+                        </a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="index.html" id="divSiteTitle">
+                            <img src="images/ABBNew.png" />
+                        </a>
+                        <!--<a href="index.html" id="divTagLine">Your Tag Line Here</a>-->
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <div class="span12">
+                <div id="contentInnerSeparator"></div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="container">
+        <form
+            action="https://script.google.com/macros/s/AKfycbzJt3ZRZwBQKI0FJo6IeHd4hJl8kddvYCbSz6IrtOt9oo2YMed4U-f9TbVIM8-t3DU/exec"
+            method="post" id="google-form">
+
+            <label for="fname">Full Name</label>
+            <input type="text" id="fname" name="Name" placeholder="Your Name...">
+
+            <label for="cname">Company's Name</label>
+            <input type="text" id="cname" name="Company's Name" placeholder="Company's Name...">
+
+            <label for="contactno">Contact Number</label>
+            <input type="tel" id="contactno" name="Contact" placeholder="Contact Number...">
+
+            <label for="email">Email ID</label>
+            <input type="email" id="email" name="E-Mail" placeholder="Email ID...">
+
+            <label for="requirements">Requirements</label>
+            <textarea id="requirements" name="Requirements" placeholder="Please mention your requirements in brief..."
+                style="height:200px"></textarea>
+
+            <input type="submit" value="Submit">
+
+        </form>
+
+        <script>
+            var form = document.getElementById('google-form');
+            form.addEventListener("submit", e => {
+                e.preventDefault();
+                fetch(form.action, {
+                    method: "POST",
+                    body: new FormData(document.getElementById("google-form")),
+                }).then(
+                    response => {response.json();
+                    console.warn(response)}
+                ).then((html) => {
+                    // you can put any JS code here
+                    // window.open('page2.html', '_self');
+
+                });
+            });
+        </script>
+
+    </div>
+</body>
+
+</html>
